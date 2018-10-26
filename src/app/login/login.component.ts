@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.ok = 1;
         let it = this;
         setTimeout(function () {
-          // it.$location.path('/home')
+          it.router.navigateByUrl('/registration');
         },1000)
       },( error ) => {
         this.filtersError(error;
@@ -66,7 +66,6 @@ export class LoginComponent implements OnInit {
   }
   signIn(value){
     // console.log(this.location.go('/registration'))
-    this.router.navigateByUrl('/registration');
     this.data.emit(this.emails);
     this.error = [];
     this.valids(!this.password, 'password', "Password required");
@@ -88,6 +87,7 @@ export class LoginComponent implements OnInit {
       this.error.push(textEror);
       name == 'password' ? this.passwordRequire = 1 : this.emailRequire = 1
     }
+    console.log(this.passwordRequire)
   }
   filtersError(value){
     this.loading = false;

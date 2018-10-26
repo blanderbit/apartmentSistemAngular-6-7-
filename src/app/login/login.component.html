@@ -5,9 +5,9 @@
         <h3>Autorization</h3>
         {{title}}
         <input type="text" [(ngModel)]="emails" placeholder="Email" [ngModelOptions]="{standalone: true}"
-        [ngStyle]="{border:emailRequire==0?'1px solid white':'1px solid red'}"/><br>
+        [ngStyle]="{border:emailRequire == 0?'1px solid white':'1px solid red'}"/><br>
         <input type="password" [(ngModel)]="password"
-        (style)="{border:passwordRequire==0?'1px solid white':'1px solid red'}" [ngModelOptions]="{standalone: true}"
+        [ngStyle]="{border:passwordRequire == 0?'1px solid white':'1px solid red'}" [ngModelOptions]="{standalone: true}"
                placeholder="Password"/>
         <button (click)="signIn()" [ngStyle]="{background:button == 0?'royalblue':'red'}">
           <span *ngIf="loading; else spiner">Login</span>
@@ -16,9 +16,9 @@
           </ng-template>
         </button>
         <p class="message">
-          You have account?
-          <a href="/login">
-            Log in
+          Not registred?
+          <a href="/registration">
+            Create account
           </a>
         </p>
       </form>

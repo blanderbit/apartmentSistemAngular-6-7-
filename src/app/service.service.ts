@@ -21,5 +21,12 @@ export class ServiceService {
         token:token
       })
     }
+    registration(name,emails,password){
+      return this.http.post('http://ec2-54-88-87-181.compute-1.amazonaws.com:8889/register',{
+        username: name,
+        email: emails,
+        password: password
+      })
+    }
 }
 

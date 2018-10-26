@@ -1,3 +1,40 @@
-<p>
-  register works!
-</p>
+<div class="Login">
+  <div class="containerform">
+    <div class="form">
+      <form class="login-form">
+        <h3>Registration</h3>
+        <input type="text" [(ngModel)]="name" placeholder="Логин" [ngModelOptions]="{standalone: true}"
+               [ngStyle]="{border:nameRequire==0?'1px solid white':'1px solid red'}"/><br>
+        <input type="text" [(ngModel)]="emails" placeholder="Email" [ngModelOptions]="{standalone: true}"
+               [ngStyle]="{border:emailRequire == 0?'1px solid white':'1px solid red'}"/><br>
+        <input type="password" [(ngModel)]="password"
+               [ngStyle]="{border:passwordRequire == 0?'1px solid white':'1px solid red'}" [ngModelOptions]="{standalone: true}"
+               placeholder="Password"/>
+        <button (click)="create()" [ngStyle]="{background:button == 0?'royalblue':'red'}">
+          <span *ngIf="loading; else spiner">Login</span>
+          <ng-template #spiner>
+            <div class="spinnerLoginRagistration" ></div>
+          </ng-template>
+        </button>
+        <p class="message">
+          You have account?
+          <a href="/login">
+            Log in
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="allErrors" [ngStyle]="{opacity:allEroors==0?'0':'1'}">
+  <ul>
+    <li *ngFor="let one of error">
+      {{one}}
+    </li>
+  </ul>
+</div>
+<div class="modallogin" *ngIf="ok==0?false:true">
+  <div>
+    Created
+  </div>
+</div>
