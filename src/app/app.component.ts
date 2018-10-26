@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'untitled';
+  title = 'sent data by components';
+  data = '';
+  datas(value){
+    console.log(value)
+    this.data = value
+  }
 }
