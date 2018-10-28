@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
 
 
   sent(value){
-    this._serviceService.registration(this.emails, this.password)
+    this._serviceService.registration( this.name, this.emails, this.password)
       .subscribe((data) => {
         console.log(data)
         // this.loading = false

@@ -1,0 +1,31 @@
+
+<mat-drawer-container class="example-container" >
+  <mat-drawer mode="side" class="side" opened>
+    <div class="containerSide">
+      <div style="text-align: center;vertical-align:middle;min-height: 64px;background: red">Drawer content</div>
+      <div style="display: flex;flex-direction: column;align-items: center;margin: 5px">
+        <button *ngFor="let list of lists" mat-stroked-button color="primary"  style="color:blue;width: 100%;margin:5px">{{list}}</button>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content>
+      <app-navbar></app-navbar>
+      <div class="container_home">
+          <mat-card class="example-card" *ngFor="let post of posts">
+              <div style="flex: 1 1 auto;margin:5px;background: white">
+                <mat-card-header>
+                    <mat-card-title>Street {{post.street}}</mat-card-title>
+                    <mat-card-subtitle>{{post.star}}</mat-card-subtitle>
+                </mat-card-header>
+                <div [ngStyle]="{backgroundImage:'url('+showUrlPhoto(post.photo_url)+')'}"
+                   style="flex: 1 1 auto;width: 100%;height: 200px;background-position: center center;background-size: cover"></div>
+                <mat-card-actions>
+                    <button mat-button>LIKE</button>
+                    <button mat-button>Choose a number</button>
+                </mat-card-actions>
+              </div>
+          </mat-card>
+      </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>

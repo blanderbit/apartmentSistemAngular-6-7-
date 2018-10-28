@@ -8,6 +8,8 @@ import { Location } from '@angular/common';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+
 export class LoginComponent implements OnInit {
   public emails = "";
   public password = "";
@@ -30,28 +32,29 @@ export class LoginComponent implements OnInit {
     private _serviceService: ServiceService,
     private router: Router,
     private location: Location,
-
     ) { }
 
 
 
   ngOnInit() {
-
+    this._serviceService.tokenIf()
   }
 
 
-  sent(value){
+  sent(){
     this._serviceService.autorization(this.emails, this.password)
       .subscribe((data) => {
         this.loading = false
-        localStorage.setItem('receive token ', data.token)
+        // localStorage.setItem('token', data.token)
         this.ok = 1;
+
+
         let it = this;
         setTimeout(function () {
           it.router.navigateByUrl('/registration');
         },1000)
       },( error ) => {
-        this.filtersError(error;
+        this.filtersError(error);
       });
 
     // работа  с последовательными запросами

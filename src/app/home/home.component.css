@@ -1,0 +1,65 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+.side{
+  width: 200px;
+}
+.containerSide{ min-height: 100vh;
+  height: 100%;
+  width: 200px;background: white;
+  box-shadow:
+    0 3px 5px -1px rgba(0,0,0,.2),
+    0 6px 10px 0 rgba(0,0,0,.14),
+    0 1px 18px 0 rgba(0,0,0,.12);
+  position: fixed;
+}
+.mat-drawer-container{
+  position: static;
+  z-index: auto;
+}
+.container_home{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /*flex-direction: column;*/
+  min-height: calc(100vh - 181px);
+}
+.mat-card-actions{
+  padding: 8px;
+  margin: 0;
+}
+.mat-card{
+  padding: 0;
+}
+.postContainer{
+  display: flex;flex-wrap: wrap;flex-grow: 3;justify-content: flex-start
+}
+.example-card{
+  width:30%;margin:10px; background: none;box-shadow: none
+  /*flex:1 1 auto;*/
+}
+@media  screen and (min-width: 2400px){
+  .example-card{
+    width:40%;
+  }
+}
+@media  screen and (min-width: 2000px){
+  .example-card{
+    width:33.3%;
+  }
+}
+@media  screen and (max-width: 1300px){
+  .example-card{
+    width:30%;
+  }
+}
+@media  screen and (max-width: 850px){
+  .example-card{
+    width:50%;
+  }
+}
+
+@media  screen and (max-width: 550px){
+  .example-card{
+    width:100%;
+  }
+}
